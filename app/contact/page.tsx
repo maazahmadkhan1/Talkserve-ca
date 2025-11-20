@@ -33,53 +33,62 @@ export default function ContactPage() {
         </div>
       </HeroSection>
 
-      <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Chat with Us on <span className="text-green-600">WhatsApp</span>
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Scan the QR code below to start a conversation
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center gap-8">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border-4 border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105">
-              <div className="relative">
-                <Image
-                  src={qrCodeUrl}
-                  alt="WhatsApp QR Code"
-                  width={300}
-                  height={300}
-                  className="rounded-lg"
-                  unoptimized
-                />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg">
-                    <IoLogoWhatsapp className="w-12 h-12 text-green-600" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 py-16 sm:py-20">
+        <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-900/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] opacity-40" />
+        
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative">
+              <div className="relative bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-2xl ring-1 ring-slate-900/10 dark:ring-white/10">
+                <div className="relative">
+                  <Image
+                    src={qrCodeUrl}
+                    alt="WhatsApp QR Code"
+                    width={300}
+                    height={300}
+                    className="rounded-lg w-full h-auto"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="bg-white dark:bg-slate-800 p-3 rounded-full shadow-lg ring-2 ring-primary/20">
+                      <IoLogoWhatsapp className="w-12 h-12 text-primary" />
+                    </div>
                   </div>
                 </div>
               </div>
+              
+              <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-primary/20 dark:bg-primary/10 rounded-full blur-3xl -z-10" />
+              <div className="absolute -top-4 -left-4 w-48 h-48 bg-blue-400/20 dark:bg-blue-400/10 rounded-full blur-3xl -z-10" />
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="flex items-center justify-center gap-2 text-xl font-semibold text-gray-900 dark:text-white">
-                <IoLogoWhatsapp className="w-6 h-6 text-green-600" />
-                <span>{phoneNumber}</span>
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 max-w-md">
-                Point your phone camera at the QR code to instantly open WhatsApp and send us a message
+            <div className="max-w-2xl">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mb-4 leading-tight">
+                Connect on{' '}
+                <span className="text-primary bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                  WhatsApp
+                </span>
+              </h2>
+
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                Scan the QR code with your phone camera to instantly open WhatsApp and start a conversation with us. Quick, easy, and secure.
               </p>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-all duration-250 hover:scale-105 active:scale-95 shadow-lg shadow-green-500/30"
-              >
-                <IoLogoWhatsapp className="h-6 w-6" />
-                Open WhatsApp
-              </a>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 p-4 bg-slate-100 dark:bg-slate-800 rounded-lg">
+                  <IoLogoWhatsapp className="w-8 h-8 text-primary flex-shrink-0" />
+                  <span className="text-xl font-semibold text-slate-900 dark:text-white">{phoneNumber}</span>
+                </div>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium text-white bg-primary rounded-lg hover:bg-blue-700 transition-all duration-250 hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/30"
+                >
+                  <IoLogoWhatsapp className="h-6 w-6" />
+                  Open WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
