@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --surface: #ffffff;
+  --accent: #eff6ff;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --surface: #1e293b;
+  --accent: #1e3a8a;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(to bottom, var(--background) 0%, #e0f2fe 100%);
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-700;
+  }
+}
